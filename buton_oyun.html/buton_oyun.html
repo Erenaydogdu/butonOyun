@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #obj{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: red;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="obj" style="color: white;font-size:larger;cursor:pointer">Catch Me!</button>
+    <script>
+        var counter=0,obj,xpos,ypos;
+        obj=document.querySelector("#obj");
+        obj.onmouseover=function(){
+            counter++;
+            xpos=parseInt(Math.random()*1000)
+            ypos=parseInt(Math.random()*700);
+            obj.style.left=xpos+"px";
+            obj.style.top=ypos+"px";
+            obj.style.width=this.clientWidth+5+"px";
+            obj.style.height=this.clientHeight+5+"px";
+
+        }
+        obj.onclick=function(){
+            alert(counter+". seferde yakaladın")
+            obj.style.width="100px";
+            obj.style.height="100px";
+            counter=0;
+        }
+    </script>
+    
+</body>
+</html>
